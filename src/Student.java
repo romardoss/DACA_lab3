@@ -82,6 +82,10 @@ public class Student {
         }
     }
 
+    public SinglyList<Integer> getMarks(int index){
+        return subjects.search(index).marks;
+    }
+
     public void info(){
         System.out.println("Information about the student:");
         System.out.println("Name: " + name);

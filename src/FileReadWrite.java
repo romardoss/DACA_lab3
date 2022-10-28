@@ -42,7 +42,16 @@ public class FileReadWrite {
                 writer.write(temp.lastName + ";");
                 writer.write(temp.patronymic + ";");
                 writer.write(temp.classroom + ";");
-                writer.write(temp.phone + ";\n");
+                writer.write(temp.phone + "\n");
+                for (int j = 0; j < 4; j++) {
+                    int end = s.search(i).getMarks(j).length();
+                    SinglyList<Integer> marks = temp.getMarks(j);
+                    for (int k = 0; k < end-1; k++) {
+                        writer.write(marks.search(k) + ",");
+                    }
+                    writer.write(marks.search(end-1) + ";");
+                    writer.write("-1\n");
+                }
             }
             writer.close();
         }

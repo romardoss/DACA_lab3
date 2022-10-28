@@ -21,6 +21,10 @@ public class SinglyList<T> {
                 last = this;
             }
         }
+
+        public T getVal(){
+            return val;
+        }
     }
 
     public Node add(T obj){
