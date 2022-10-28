@@ -48,12 +48,11 @@ public class SinglyList<T> {
         if(index == 0){
             if (first.next != null){
                 first = first.next;
-                return;
             }
             else{
                 first.val = null;
-                return;
             }
+            return;
         }
 
         while (i+1 != index){
@@ -71,7 +70,7 @@ public class SinglyList<T> {
     public void print(){
         Node current = first;
         while (current != last){
-            System.out.print(current.val.toString() + " -> ");
+            System.out.print(current.val.toString() + ", ");
             current = current.next;
         }
         if(last.val != null){
