@@ -34,9 +34,9 @@ public class SinglyList<T> {
     public void print(){
         Node current = first;
         while (current != last){
-            System.out.printf(current.val.toString() + " -> ");
+            System.out.print(current.val.toString() + " -> ");
             current = current.next;
         }
-        System.out.printf(last.val.toString());
+        System.out.print(last.val.toString());
     }
 }
