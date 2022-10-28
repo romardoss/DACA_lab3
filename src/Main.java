@@ -10,7 +10,11 @@ public class Main {
         Student ivan = new Student("Ivan", "Pupkin",
                 "Oleksandrovich", 9, "+380963451234");
         ivan.addMark('m', 12);
+        ivan.addMark('m', 4);
+        ivan.addMark('m', 6);
+        ivan.deleteMark('m', 1);
         ivan.addMark('l', 6);
+        ivan.deleteMark('l', 0);
         ivan.info();
     }
 }

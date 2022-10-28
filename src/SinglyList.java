@@ -41,6 +41,33 @@ public class SinglyList<T> {
         return current.val;
     }
 
+    public void delete(int index){
+        Node current = first;
+        int i = 0;
+
+        if(index == 0){
+            if (first.next != null){
+                first = first.next;
+                return;
+            }
+            else{
+                first.val = null;
+                return;
+            }
+        }
+
+        while (i+1 != index){
+            current = current.next;
+            i++;
+        }
+        if (current.next == last){
+            last = current;
+        }
+        else{
+            current.next = current.next.next;
+        }
+    }
+
     public void print(){
         Node current = first;
         while (current != last){

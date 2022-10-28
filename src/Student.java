@@ -4,7 +4,7 @@ public class Student {
     private final String patronymic;
     private final int classroom;
     private final String phone;
-    private SinglyList<Subject> subjects;
+    private final SinglyList<Subject> subjects;
 
     public Student(String name, String lastName, String patronymic,
                    int classroom, String phone){
@@ -18,7 +18,7 @@ public class Student {
     }
 
     private class Subject{
-        private String name;
+        private final String name;
         private SinglyList<Integer> marks;
 
         public Subject(String name){
@@ -28,6 +28,10 @@ public class Student {
 
         public void add(int mark){
             marks.add(mark);
+        }
+
+        public void delete(int index){
+            marks.delete(index);
         }
     }
 
@@ -52,6 +56,26 @@ public class Student {
         }
         if(forMark != null){
             forMark.add(mark);
+        }
+        else{
+            System.out.println("Wrong subject code");
+        }
+    }
+
+    public void deleteMark(char name, int index){
+        // m - math
+        // p - physics
+        // f - foreign languages
+        // l - literature
+        Subject forMark = null;
+        switch (name) {
+            case 'm' -> forMark = subjects.search(0);
+            case 'p' -> forMark = subjects.search(1);
+            case 'f' -> forMark = subjects.search(2);
+            case 'l' -> forMark = subjects.search(3);
+        }
+        if(forMark != null){
+            forMark.delete(index);
         }
         else{
             System.out.println("Wrong subject code");
