@@ -7,8 +7,10 @@ public class Main {
         }
         test.print();
 
-        Student Ivan = new Student("Ivan", "Pupkin",
+        Student ivan = new Student("Ivan", "Pupkin",
                 "Oleksandrovich", 9, "+380963451234");
-        Ivan.info();
+        ivan.addMark('m', 12);
+        ivan.addMark('l', 6);
+        ivan.info();
     }
 }

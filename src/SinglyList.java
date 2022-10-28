@@ -31,12 +31,27 @@ public class SinglyList<T> {
         return last;
     }
 
+    public T search(int index){
+        Node current = first;
+        int i = 0;
+        while (i != index){
+            current = current.next;
+            i++;
+        }
+        return current.val;
+    }
+
     public void print(){
         Node current = first;
         while (current != last){
             System.out.print(current.val.toString() + " -> ");
             current = current.next;
         }
-        System.out.println(last.val.toString());
+        if(last.val != null){
+            System.out.println(last.val.toString());
+        }
+        else{
+            System.out.println("Nothing");
+        }
     }
 }

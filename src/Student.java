@@ -1,9 +1,9 @@
 public class Student {
-    private String name;
-    private String lastName;
-    private String patronymic;
-    private int classroom;
-    private String phone;
+    private final String name;
+    private final String lastName;
+    private final String patronymic;
+    private final int classroom;
+    private final String phone;
     private SinglyList<Subject> subjects;
 
     public Student(String name, String lastName, String patronymic,
@@ -38,6 +38,26 @@ public class Student {
         l.add(new Subject("Literature"));
     }
 
+    public void addMark(char name, int mark){
+        // m - math
+        // p - physics
+        // f - foreign languages
+        // l - literature
+        Subject forMark = null;
+        switch (name) {
+            case 'm' -> forMark = subjects.search(0);
+            case 'p' -> forMark = subjects.search(1);
+            case 'f' -> forMark = subjects.search(2);
+            case 'l' -> forMark = subjects.search(3);
+        }
+        if(forMark != null){
+            forMark.add(mark);
+        }
+        else{
+            System.out.println("Wrong subject code");
+        }
+    }
+
     public void info(){
         System.out.println("Information about the student:");
         System.out.println("Name: " + name);
@@ -47,7 +67,9 @@ public class Student {
         System.out.println("Phone number: " + phone);
         System.out.println("Marks: ");
         for (int i = 0; i < 4; i++) {
-            //System.out.println(subjects);
+            Subject temp = subjects.search(i);
+            System.out.print(temp.name + ": ");
+            temp.marks.print();
         }
     }
 
