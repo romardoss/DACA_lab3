@@ -67,6 +67,19 @@ public class SinglyList<T> {
         }
     }
 
+    public int length(){
+        if(first.val == null){
+            return 0;
+        }
+        int i = 1;
+        Node current = first;
+        while(current != last){
+            i++;
+            current = current.next;
+        }
+        return i;
+    }
+
     public void print(){
         Node current = first;
         while (current != last){

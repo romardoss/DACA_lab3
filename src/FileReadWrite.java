@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FileReadWrite {
@@ -24,9 +26,31 @@ public class FileReadWrite {
                     }
                 }
             }
+            scan.close();
         }
         catch (FileNotFoundException e){
             System.out.println("File not found");
         }
     }
+
+    public static void writeToFile(File f, SinglyList<Student> s){
+        try{
+            FileWriter writer = new FileWriter(f);
+            for (int i = 0; i < s.length(); i++) {
+                Student temp = s.search(i);
+                writer.write(temp.name + ";");
+                writer.write(temp.lastName + ";");
+                writer.write(temp.patronymic + ";");
+                writer.write(temp.classroom + ";");
+                writer.write(temp.phone + ";\n");
+            }
+            writer.close();
+        }
+        catch (IOException e){
+            System.out.println("Error");
+            e.printStackTrace();
+        }
+
+    }
+
 }

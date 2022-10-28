@@ -1,9 +1,9 @@
 public class Student {
-    private final String name;
-    private final String lastName;
-    private final String patronymic;
-    private final int classroom;
-    private final String phone;
+    public final String name;
+    public final String lastName;
+    public final String patronymic;
+    public final int classroom;
+    public final String phone;
     private final SinglyList<Subject> subjects;
 
     public Student(String name, String lastName, String patronymic,
