@@ -3,15 +3,18 @@ public class Student {
     private String lastName;
     private String patronymic;
     private int classroom;
-    private long phone;
+    private String phone;
+    private SinglyList<Subject> subjects;
 
     public Student(String name, String lastName, String patronymic,
-                   int classroom, long phone){
+                   int classroom, String phone){
         this.name = name;
         this.lastName = lastName;
         this.patronymic = patronymic;
         this.classroom = classroom;
         this.phone = phone;
+        subjects = new SinglyList<>();
+        fillSubjects(subjects);
     }
 
     private class Subject{
@@ -20,10 +23,32 @@ public class Student {
 
         public Subject(String name){
             this.name = name;
+            marks = new SinglyList<>();
         }
 
         public void add(int mark){
             marks.add(mark);
         }
     }
+
+    private void fillSubjects(SinglyList<Subject> l){
+        l.add(new Subject("Math"));
+        l.add(new Subject("Physics"));
+        l.add(new Subject("Foreign language"));
+        l.add(new Subject("Literature"));
+    }
+
+    public void info(){
+        System.out.println("Information about the student:");
+        System.out.println("Name: " + name);
+        System.out.println("Last name: " + lastName);
+        System.out.println("Patronymic: " + patronymic);
+        System.out.println("Classroom: " + classroom);
+        System.out.println("Phone number: " + phone);
+        System.out.println("Marks: ");
+        for (int i = 0; i < 4; i++) {
+            //System.out.println(subjects);
+        }
+    }
+
 }

@@ -37,6 +37,6 @@ public class SinglyList<T> {
             System.out.print(current.val.toString() + " -> ");
             current = current.next;
         }
-        System.out.print(last.val.toString());
+        System.out.println(last.val.toString());
     }
 }

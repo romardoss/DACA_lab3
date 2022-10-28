@@ -6,5 +6,9 @@ public class Main {
             test.add( (int) (Math.random() * 100) );
         }
         test.print();
+
+        Student Ivan = new Student("Ivan", "Pupkin",
+                "Oleksandrovich", 9, "+380963451234");
+        Ivan.info();
     }
 }
