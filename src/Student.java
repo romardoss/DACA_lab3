@@ -95,6 +95,7 @@ public class Student {
             System.out.print(temp.name + ": ");
             temp.marks.print();
         }
+        System.out.println("\n");
     }
 
 }
