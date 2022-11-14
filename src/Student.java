@@ -17,9 +17,9 @@ public class Student {
         fillSubjects(subjects);
     }
 
-    private class Subject{
+    private static class Subject{
         private final String name;
-        private SinglyList<Integer> marks;
+        private final SinglyList<Integer> marks;
 
         public Subject(String name){
             this.name = name;

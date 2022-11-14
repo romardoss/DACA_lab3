@@ -21,10 +21,6 @@ public class SinglyList<T> {
                 last = this;
             }
         }
-
-        public T getVal(){
-            return val;
-        }
     }
 
     public Node add(T obj){
@@ -36,13 +32,18 @@ public class SinglyList<T> {
     }
 
     public T search(int index){
+        Node current = getNode(index);
+        return current.val;
+    }
+
+    public Node getNode(int index){
         Node current = first;
         int i = 0;
         while (i != index){
             current = current.next;
             i++;
         }
-        return current.val;
+        return current;
     }
 
     public void delete(int index){
@@ -71,6 +72,11 @@ public class SinglyList<T> {
         }
     }
 
+    public void edit(int index, T newValue){
+        Node current = getNode(index);
+        current.val= newValue;
+    }
+
     public int length(){
         if(first.val == null){
             return 0;
@@ -91,7 +97,7 @@ public class SinglyList<T> {
             current = current.next;
         }
         if(last.val != null){
-            System.out.println(last.val.toString());
+            System.out.println(last.val);
         }
         else{
             System.out.println("Nothing");
